@@ -1,4 +1,3 @@
-```yaml
 name: CI
 
 on:
@@ -11,7 +10,6 @@ on:
 
 jobs:
   build-and-test:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -37,36 +35,3 @@ jobs:
         with:
           name: cobertura-cobertura-xml
           path: ./TestResults/**/coverage.cobertura.xml
-```
-
-### Depois de salvar
-
-No CMD, rode:
-
-```cmd
-git status
-```
-
-Deve aparecer:
-
-```text
-modified:   .github/workflows/ci.yml
-```
-
-Depois:
-
-```cmd
-git add .github/workflows/ci.yml
-```
-
-```cmd
-git commit -m "ci: adiciona cobertura de testes"
-```
-
-```cmd
-git push origin main
-```
-
-⚠️ **Importante:** esse push vai iniciar o **CI #4**. Ele precisa terminar verde. Depois vamos entrar nessa execução e verificar se apareceu o artifact **`cobertura-cobertura-xml`**.
-
-Me manda o resultado do `git push` e seguimos daí.
